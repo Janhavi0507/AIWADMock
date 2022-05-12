@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Database</title>
+</head>
+<body>
+  <div class="container">
+    <table class="list">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Class</th>
+        <th>Gender</th>
+      </tr>
+      <tbody id="tbody">
+      </tbody>
+    </table>
+  </div>
+  <script type="text/javascript">
+
+  function displayList() {
+    // var students = localStorage.getItem("users");
+    var students = Object.keys(localStorage), key, i = 0;
+    console.log(students);
+    var table = document.getElementById("tbody");
+    // var code = JSON.parse(students);
+
+    for (; key = students[i]; i++) {
+      var student = localStorage.getItem(key);
+      console.log(student.keys)
+      // table.innerHTML += `<tr>
+      //   <td>${student.name}</td>
+      //   <td>${student.age}</td>
+      //   <td>${student.class}</td>
+      //   <td>${student.gender}</td>
+      //   </tr>`;
+      table.innerHTML = `${student}`;
+    }
+
+    // Object.keys(localStorage).forEach(stu => {
+    //   var student = localStorage.getItem(stu.name);
+    //   table.innerHTML += `
+    //   <tr>
+    //   <td>${student.name}</td>
+    //   <td>${student.age}</td>
+    //   <td>${student.class}</td>
+    //   <td>${student.gender}</td>
+    //   </tr>
+    //   `});
+    }
+  // }
+  displayList();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+  var students = Object.keys(localStorage), key, i = 0;
+  console.log(students);
+  var table = document.getElementById("tbody");
+  for (; key = students[i]; i++) {
+      var student = localStorage.getItem(key);
+      console.log(student.keys)
+      // table.innerHTML += `<tr>
+      //   <td>${student.name}</td>
+      //   <td>${student.age}</td>
+      //   <td>${student.class}</td>
+      //   <td>${student.gender}</td>
+      //   </tr>`;
+    )
+ -->
